@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function arrayManipulation(arr, operationCallback, filterCallback) {
+            const manipulatedArray = arr.map(operationCallback);
+            const filteredArray = manipulatedArray.filter(filterCallback);
+
+            return filteredArray;
+        }
+
+        const squareCallback = (num) => num ** 2;
+        const greaterThanTenCallback = (num) => num > 10;
+
+        function handleButtonClick() {
+            const inputArray = document.getElementById('inputArray').value
+                .split(',')
+                .map((num) => parseInt(num.trim()));
+            const filteredArray = arrayManipulation(inputArray, squareCallback, greaterThanTenCallback);
+            document.getElementById('result').textContent = filteredArray.join(', ');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Array Manipulation Example</h1>
+    <p>Enter a list of numbers with comma:</p>
+    <input type="text" id="inputArray">
+    <button onclick="handleButtonClick()">Square and Filter</button>
+    <p>Result:</p>
+    <div id="result"></div>
+</body>
+
+</html>

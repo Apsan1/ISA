@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function getFruit(fruit) {
+      return new Promise((resolve, reject) => {
+        if (fruit.toLowerCase() === 'watermelon') {
+          setTimeout(() => {
+            reject(new Error('Sorry, we\'re out of watermelons'));
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            resolve(`Here is your ${fruit}`);
+          }, 1000);
+        }
+      });
+    }
+
+    function handleResult(result) {
+      document.getElementById('result').innerText = result;
+    }
+
+    function handleError(error) {
+      document.getElementById('result').innerText = error.message;
+    }
+  </script>
+</head>
+
+<body>
+  <input type="text" id="fruit" placeholder="Enter a fruit">
+  <button onclick="getFruit(fruit.value).then(handleResult).catch(handleError)">Get Fruit</button>
+  <div id="result"></div>
+</body>
+
+</html>
