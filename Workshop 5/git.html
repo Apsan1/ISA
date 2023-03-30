@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //token = "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"
+        function search() {
+            var name = document.querySelector('input').value;
+            var api_url = 'https://api.github.com/users/' + name+'/repos';
+            
+            async function getapi(url){
+                const response = await fetch(url);
+                var repos = await response.json();
+                console.log(data);
+                if (response){
+                    loading();
+                }
+                show(data);
+            }
+            getapi(api_url)
+        }
+
+        function hideloader() {
+            document.getElementById('loading').style.display = 'none';
+        }
+        function show(data){
+            let tab = 
+            `<tr>
+                <th>Repo Name:</th>
+                <th> Repo URL:</th>
+                </tr>`;
+            for (let r of data.list){
+                tab += `<tr>
+                <td>${r.name}</td>
+                <td>${r.html_url}</td>
+                </tr>`;
+            }
+            document.getElementById("result").innerHTML = tab;
+        }
+
+    </script>
+</head>
+<body>
+    <label>Your Github Name: </label>
+    <input type="text">
+    <button type="submit" onclick="search()">Search</button>
+    <div id="result"></div>
+</body>
+</html>

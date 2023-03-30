@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+    <script>
+        function search() {
+            var name = document.querySelector('input').value;
+            var api_url = 'https://www.omdbapi.com/?t=' + name + '&apikey=b4cdfba7';
+            async function getapi(url) {
+                const response = await fetch(url);
+                var data = await response.json();
+                console.log(data);
+                if (response) {
+                    loading();
+                }
+                show(data);
+            }
+            getapi(api_url)
+        }
+        function loading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+        function show(data) {
+            let tab =
+                `<tr>
+                <h1>${data.Title}</h1>
+                <th> Year: ${data.Year}</th><br>
+                <th> Genre: ${data.Genre}</th><br>
+                <th> Director: ${data.Director}</th><br>
+                <th> Actors: ${data.Actors}</th><br>
+                <th> IMDB Rating: ${data.imdbRating}</th></br>
+                <th> Plot: ${data.Plot}</th><br>
+                <th> Poster: <img src="${data.Poster}"></th><br>
+                </tr>`;
+            document.getElementById("result").innerHTML = tab;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- improve this-->
+    <label>Enter Movie Name: </label>
+    <input type="text">
+    <button type="submit" onclick="search()">Search</button>
+    <div id="loading"></div>
+    <div id="result"></div>
+
+</body>
+
+</html>
