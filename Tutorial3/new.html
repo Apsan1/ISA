@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-family: "Times New Roman";
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function changeFont(){
+            document.getElementById("para").style.fontFamily = "Arial";
+        }
+        function defaultFont(){
+            document.getElementById("para").style.fontFamily = "Times New Roman";
+        }
+        function remove(){
+            var x = document.getElementById("cars");
+            x.remove(x.selectedIndex);
+        }
+        function volume(){
+            var r = document.getElementById("radius").value;
+            var v = (4/3)*Math.PI*r*r*r;
+            document.getElementById("volume").innerHTML = v;
+        }
+    </script>
+</head>
+<body>
+    <p id="para" onclick="changeFont()">This is a paragraph</p>
+
+    <button onclick="changeFont()">Change Font</button> <br>
+    <!--change the font again-->
+    <button onclick="defaultFont()">Default Font</button> <br>
+    <!-- make a dropdown list which can remove selected item from a dropdown list-->
+    <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">McLaren</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+    <button onclick="remove()">Remove Item</button> <br>
+    <!-- enter radius and find volume of sphere-->
+    <input type="text" id="radius" placeholder="Enter radius"><br>
+    <button onclick="volume()">Volume</button><br>
+    <p id="volume"></p><br>
+        
+</body>
+</html>
