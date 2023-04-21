@@ -41,5 +41,4 @@ VALUES
 UPDATE students SET age = 27 WHERE id = 3;
 SELECT DISTINCT age FROM students;
 
-SELECT * FROM students WHERE gpa > 3.50;
-
+SELECT * FROM students WHERE gpa = 3.50;
