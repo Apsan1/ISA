@@ -56,3 +56,5 @@ SELECT * FROM students WHERE email LIKE '%hotmail.com';
 SELECT * FROM students WHERE last_name LIKE 'S%';
 
 SELECT * FROM students WHERE first_name LIKE 'B%' AND gpa > 3.00;
+
+SELECT * FROM students ORDER BY gpa DESC;
