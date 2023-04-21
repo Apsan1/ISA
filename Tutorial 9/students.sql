@@ -12,3 +12,28 @@ CREATE TABLE students
     graduation_date DATE NOT NULL,
     PRIMARY KEY (id)
 );
+
+INSERT INTO students (first_name, last_name, age, email, phone_number, address, major_sub, gpa, graduation_date) 
+VALUES 
+('Kabir','Singh','25','kabir@pretti.com','+977 9849874565','Pokhara',
+'Business',2.65,'2023-06-01'),
+('Bikash', 'Sharma', '23', 'bikash.sharma@gmail.com', '+977 9861321245', 'Kathmandu', 
+'Computer Science', 3.50, '2023-04-19'),
+('Garima', 'Prajapati', '2000-04-11', 'garima.prajapati@hotmail.com', '+977 9846532789', 'Kathmandu', 
+'Business Studies', 3.52, '2022-03-29'),
+('Harish', 'Aryal', '22', 'harish.aryal@gmail.com', '+977 9876534211', 'Pokhara', 
+'Computer Science', 3.20, '2022-04-19'),
+('Biraj', 'Adhikari', '24', 'biraj.adhikari@gmail.com', '+977 9876213455', 'Kathmandu', 
+'Computer Science', 2.67, '2022-07-10'),
+('Bikash', 'Sharma', '23', 'bikky.sharma@hotmail.com', '+977 9865214578', 'Jhapa', 
+'Computer Science', 2.91, '2022-09-15'),
+('Anjali', 'Karki', '23', 'anjali.karki@gmail.com', '+977 9861729384', 'Sunsari', 
+'Computer Science', 3.24, '2023-01-03'),
+('Raju', 'Maharjan', '24', 'raju.maharjan@hotmail.com', '+977 9860847220', 'Butwal', 
+'Business Studies', 3.44, '2023-03-19'),
+('Surya', 'Dhungana', '25', 'surya.dhungana@gmail.com', '+977 9855315960', 'Bhaktapur', 
+'Computer Science', 2.78, '2022-11-22'),
+('Anita', 'Thapa', '24', 'anita.thapa@hotmail.com', '+977 9840210648', 'Kathmandu', 
+'Computer Science', 3.11, '2023-02-14'),
+('Nabin', 'Bhattarai', '23', 'nabin.bhattarai@gmail.com', '+977 9807312856', 'Kathmandu', 
+'Business Studies', 2.90, '2022-12-28');
