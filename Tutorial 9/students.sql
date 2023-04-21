@@ -58,3 +58,5 @@ SELECT * FROM students WHERE last_name LIKE 'S%';
 SELECT * FROM students WHERE first_name LIKE 'B%' AND gpa > 3.00;
 
 SELECT * FROM students ORDER BY gpa DESC;
+
+SELECT address, AVG(gpa) FROM students GROUP BY address HAVING AVG(gpa) > 3.00;
