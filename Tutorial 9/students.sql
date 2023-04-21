@@ -51,3 +51,4 @@ SELECT * FROM students WHERE gpa > (SELECT AVG(gpa) FROM students);
 
 SELECT * FROM students WHERE gpa BETWEEN (SELECT MIN(gpa) FROM students) AND (SELECT MAX(gpa) FROM students);
 
+SELECT * FROM students WHERE email LIKE '%hotmail.com';
