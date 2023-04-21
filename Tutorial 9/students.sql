@@ -13,7 +13,7 @@ CREATE TABLE students
     PRIMARY KEY (id)
 );
 
-INSERT INTO students (first_name, last_name, age, email, phone_number, address, major_sub, gpa, graduation_date) 
+INSERT INTO students (first_name, last_name, age, email, phone_number, address, major_subject, gpa, graduation_date) 
 VALUES 
 ('Kabir','Singh','25','kabir@pretti.com','+977 9849874565','Pokhara',
 'Business',2.65,'2023-06-01'),
@@ -37,3 +37,9 @@ VALUES
 'Computer Science', 3.11, '2023-02-14'),
 ('Nabin', 'Bhattarai', '23', 'nabin.bhattarai@gmail.com', '+977 9807312856', 'Kathmandu', 
 'Business Studies', 2.90, '2022-12-28');
+
+UPDATE students SET age = 27 WHERE id = 3;
+SELECT DISTINCT age FROM students;
+
+
+
