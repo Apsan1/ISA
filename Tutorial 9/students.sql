@@ -48,3 +48,6 @@ SELECT * FROM students WHERE gpa BETWEEN 3.00 AND 3.50;
 SELECT * FROM students WHERE major_subject = 'Computer Science';
 
 SELECT * FROM students WHERE gpa > (SELECT AVG(gpa) FROM students);
+
+SELECT * FROM students WHERE gpa BETWEEN (SELECT MIN(gpa) FROM students) AND (SELECT MAX(gpa) FROM students);
+
